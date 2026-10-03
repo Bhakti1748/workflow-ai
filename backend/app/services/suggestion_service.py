@@ -1,7 +1,7 @@
 from datetime import datetime, date, timedelta
 from typing import List
-from backend.app.models.task import Task
-from backend.app.schemas.dashboard import AISuggestion
+from app.models.task import Task
+from app.schemas.dashboard import AISuggestion
 
 def parse_date_flexibly(date_str: str) -> date | None:
     if not date_str:

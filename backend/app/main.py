@@ -4,10 +4,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-from backend.app.database.session import init_db, SessionLocal
-from backend.app.models.task import Task
-from backend.app.services.demo_data import seed_demo_workspace
-from backend.app.api import (
+from app.database.session import init_db, SessionLocal
+from app.models.task import Task
+from app.services.demo_data import seed_demo_workspace
+from app.api import (
     routes_tasks,
     routes_analyze,
     routes_planner,
@@ -64,4 +64,4 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
     host = os.getenv("HOST", "0.0.0.0")
-    uvicorn.run("backend.app.main:app", host=host, port=port, reload=True)
+    uvicorn.run("app.main:app", host=host, port=port, reload=True)

@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from backend.app.database.session import get_db
-from backend.app.services.demo_data import seed_demo_workspace
-from backend.app.ai.gemini_service import is_api_configured, GEMINI_MODEL
+from app.database.session import get_db
+from app.services.demo_data import seed_demo_workspace
+from app.ai.gemini_service import is_api_configured, GEMINI_MODEL
 
 router = APIRouter(prefix="/api", tags=["Demo & System"])
 

@@ -1,6 +1,6 @@
 from typing import List, Optional
 from pydantic import BaseModel, Field
-from backend.app.schemas.task import TaskResponse
+from app.schemas.task import TaskResponse
 
 class AISuggestion(BaseModel):
     id: str

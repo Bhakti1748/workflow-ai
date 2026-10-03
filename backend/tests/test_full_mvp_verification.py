@@ -8,10 +8,10 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 from fastapi.testclient import TestClient
-from backend.app.main import app
-from backend.app.database.session import SessionLocal
-from backend.app.models.task import Task
-from backend.app.models.plan import DailyPlan
+from app.main import app
+from app.database.session import SessionLocal
+from app.models.task import Task
+from app.models.plan import DailyPlan
 
 def run_full_mvp_verification():
     client = TestClient(app)

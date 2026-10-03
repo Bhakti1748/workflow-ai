@@ -8,11 +8,11 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 from fastapi.testclient import TestClient
-from backend.app.main import app
-from backend.app.database.session import SessionLocal, init_db
-from backend.app.models.task import Task
-from backend.app.models.plan import DailyPlan
-from backend.app.services.demo_data import seed_demo_workspace
+from app.main import app
+from app.database.session import SessionLocal, init_db
+from app.models.task import Task
+from app.models.plan import DailyPlan
+from app.services.demo_data import seed_demo_workspace
 
 client = TestClient(app)
 
@@ -134,7 +134,7 @@ def run_production_readiness_audit():
 
     # Or construct a text-rich PDF
     # Since pypdf empty page has no text, let's write with ReportLab if available or test file_parser directly
-    from backend.app.services.file_parser import extract_text_from_file
+    from app.services.file_parser import extract_text_from_file
     txt_test_bytes = b"Incident Response Drill:\nMaria to patch firewall by 3pm.\nJohn to notify clients by 4pm."
     extracted_txt = extract_text_from_file("incident.txt", txt_test_bytes)
     assert "Maria to patch firewall" in extracted_txt

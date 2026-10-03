@@ -1,7 +1,7 @@
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from backend.app.database.base import Base
+from app.database.base import Base
 
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "workflow_ai.db")
 DATABASE_URL = f"sqlite:///{DB_PATH}"
@@ -21,6 +21,6 @@ def get_db():
         db.close()
 
 def init_db():
-    from backend.app.models.task import Task
-    from backend.app.models.plan import DailyPlan
+    from app.models.task import Task
+    from app.models.plan import DailyPlan
     Base.metadata.create_all(bind=engine)

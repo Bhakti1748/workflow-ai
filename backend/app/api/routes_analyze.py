@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
-from backend.app.schemas.extraction import AnalyzeRequest, ExtractionResult
-from backend.app.services.file_parser import extract_text_from_file
-from backend.app.ai.gemini_service import extract_tasks_with_gemini
+from app.schemas.extraction import AnalyzeRequest, ExtractionResult
+from app.services.file_parser import extract_text_from_file
+from app.ai.gemini_service import extract_tasks_with_gemini
 
 router = APIRouter(prefix="/api", tags=["Analysis & Ingestion"])
 

@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 import json
 import uuid
 from sqlalchemy import Column, String, Text, Float, DateTime
-from backend.app.database.base import Base
+from app.database.base import Base
 
 class DailyPlan(Base):
     __tablename__ = "daily_plans"

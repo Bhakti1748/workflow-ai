@@ -2,16 +2,16 @@ from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
-from backend.app.database.session import get_db
-from backend.app.schemas.task import (
+from app.database.session import get_db
+from app.schemas.task import (
     TaskCreate,
     TaskUpdate,
     TaskResponse,
     BatchApproveRequest,
 )
-from backend.app.schemas.extraction import BreakdownResponse
-from backend.app.services import task_service
-from backend.app.ai.gemini_service import breakdown_task_with_gemini
+from app.schemas.extraction import BreakdownResponse
+from app.services import task_service
+from app.ai.gemini_service import breakdown_task_with_gemini
 
 router = APIRouter(prefix="/api/tasks", tags=["Tasks"])
 

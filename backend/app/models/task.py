@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 import json
 import uuid
 from sqlalchemy import Column, String, Text, Integer, DateTime
-from backend.app.database.base import Base
+from app.database.base import Base
 
 class Task(Base):
     __tablename__ = "tasks"

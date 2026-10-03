@@ -3,11 +3,11 @@ from collections import defaultdict
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from backend.app.database.session import get_db
-from backend.app.models.task import Task
-from backend.app.schemas.dashboard import DashboardStats, CategoryMetric
-from backend.app.schemas.task import TaskResponse
-from backend.app.services.suggestion_service import generate_suggestions, parse_date_flexibly
+from app.database.session import get_db
+from app.models.task import Task
+from app.schemas.dashboard import DashboardStats, CategoryMetric
+from app.schemas.task import TaskResponse
+from app.services.suggestion_service import generate_suggestions, parse_date_flexibly
 
 router = APIRouter(prefix="/api/dashboard", tags=["Dashboard"])
 

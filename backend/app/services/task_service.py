@@ -2,8 +2,8 @@ import uuid
 from typing import List, Optional
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
-from backend.app.models.task import Task
-from backend.app.schemas.task import TaskCreate, TaskUpdate, Subtask
+from app.models.task import Task
+from app.schemas.task import TaskCreate, TaskUpdate, Subtask
 
 def get_tasks(
     db: Session,

@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from backend.app.database.session import get_db
-from backend.app.models.task import Task
-from backend.app.models.plan import DailyPlan
-from backend.app.schemas.plan import DailyPlanRequest, DailyPlanResponse
-from backend.app.ai.gemini_service import generate_daily_plan_with_gemini
+from app.database.session import get_db
+from app.models.task import Task
+from app.models.plan import DailyPlan
+from app.schemas.plan import DailyPlanRequest, DailyPlanResponse
+from app.ai.gemini_service import generate_daily_plan_with_gemini
 
 router = APIRouter(prefix="/api/plan", tags=["Daily Planner"])
 
@@ -39,7 +39,7 @@ def get_latest_plan(db: Session = Depends(get_db)):
     if not latest:
         raise HTTPException(status_code=404, detail="No daily plan generated yet.")
     
-    from backend.app.schemas.plan import ScheduleSlot
+    from app.schemas.plan import ScheduleSlot
     raw = latest.schedule
     if isinstance(raw, dict):
         slots = [ScheduleSlot(**s) for s in raw.get("schedule", [])]

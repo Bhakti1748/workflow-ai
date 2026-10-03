@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
-from backend.app.main import app
-from backend.app.database.session import SessionLocal
-from backend.app.models.task import Task
+from app.main import app
+from app.database.session import SessionLocal
+from app.models.task import Task
 
 def test_planner_and_assistant():
     client = TestClient(app)

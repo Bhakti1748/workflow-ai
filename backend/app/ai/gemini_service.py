@@ -11,14 +11,14 @@ if os.path.exists(_env_path):
     load_dotenv(_env_path)
 load_dotenv()
 
-from backend.app.schemas.extraction import (
+from app.schemas.extraction import (
     ExtractionResult,
     ExtractedTask,
     ExtractedSubtask,
 )
-from backend.app.schemas.plan import DailyPlanResponse, ScheduleSlot
-from backend.app.schemas.assistant import AssistantResponse, AssistantMessage
-from backend.app.models.task import Task
+from app.schemas.plan import DailyPlanResponse, ScheduleSlot
+from app.schemas.assistant import AssistantResponse, AssistantMessage
+from app.models.task import Task
 
 logger = logging.getLogger(__name__)
 

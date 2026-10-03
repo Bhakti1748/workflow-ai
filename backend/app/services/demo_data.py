@@ -2,8 +2,8 @@ from datetime import date, timedelta
 import uuid
 from typing import List
 from sqlalchemy.orm import Session
-from backend.app.models.task import Task
-from backend.app.models.plan import DailyPlan
+from app.models.task import Task
+from app.models.plan import DailyPlan
 
 def seed_demo_workspace(db: Session) -> List[Task]:
     """Clears existing tasks and populates the database with realistic demo tasks including the required demo scenario."""
